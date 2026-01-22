@@ -1,0 +1,23 @@
+services:
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - /var/www:/www
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - glh_my_network
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  glh_my_network:
+    external: true

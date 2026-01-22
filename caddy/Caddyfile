@@ -1,0 +1,8 @@
+{
+    admin off
+    email admin@your.domain.com
+}
+
+your.domain.com {
+    reverse_proxy gitlab:80
+}
