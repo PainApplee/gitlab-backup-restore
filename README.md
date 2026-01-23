@@ -31,7 +31,7 @@ The `backup_restore.sh` script automates the process of deploying GitLab from a 
 
 3. **Grant execution permissions**:
    ```bash
-   chmod +x backup_skript.sh
+   chmod +x backup_restore.sh
    ```
 
 ## How to Use
@@ -39,7 +39,7 @@ The `backup_restore.sh` script automates the process of deploying GitLab from a 
 Run the script with superuser privileges:
 
 ```bash
-sudo ./backup_skript.sh
+sudo ./backup_restore.sh
 ```
 
 ## Execution Stages
@@ -72,7 +72,6 @@ sudo ./backup_skript.sh
 ### Stage 6: Starting Caddy
 - Prepares `/opt/caddy` directory
 - Copies Caddy configs
-- Adds entry to `/etc/hosts`
 - Starts Caddy container
 
 ## Container Waiting Function
@@ -109,7 +108,7 @@ Caddy started successfully
 
 To save execution logs:
 ```bash
-sudo ./backup_skript.sh | tee backup_$(date +%Y%m%d_%H%M%S).log
+sudo ./backup_restore.sh | tee backup_$(date +%Y%m%d_%H%M%S).log
 ```
 
 ## Important Notes
